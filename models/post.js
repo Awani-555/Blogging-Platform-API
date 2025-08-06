@@ -1,3 +1,31 @@
+const mongoose =require('mongoose');
+
+const postSchema = new mongoose.Schema({
+  title: {
+     type: String, 
+     required: true 
+    },
+  content: { 
+    type: String, 
+    required: true 
+  },    
+  category: { 
+    type: String, 
+    required: true
+   },
+  tags: [{
+     type: String 
+    } ],
+  createdAt: { 
+    type: Date,
+     default: Date.now 
+    }
+});
+
+// Export the Post model
+module.exports = mongoose.model('Post', postSchema);
+
+/*
 let posts=[];
 let postId=1;
 
@@ -40,3 +68,4 @@ module.exports = {
   updatePost,
   deletePost
 };
+*/
