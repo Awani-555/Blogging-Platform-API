@@ -1,7 +1,11 @@
 const express = require('express');
+const morgan = require('morgan'); 
 const app=express();
 
 const postsRoutes = require('./routes/posts');
+
+
+app.use(morgan('dev')); 
 
 app.use(express.json());
 
